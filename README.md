@@ -1,7 +1,7 @@
 # agileframework.github.io
-agileframework
+agileframework.org
 
-#怎样将域名绑定到github pages 博客上
+## 怎样将域名绑定到github pages 博客上
 
 * 1.在仓库根目录添加CNAME文件，在文件中添加域名（不带http，www等前缀），例如 z.cn
 * 2.ping username.github.io记录下IP地址
