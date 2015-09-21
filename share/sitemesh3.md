@@ -1,0 +1,150 @@
+## Sitemesh3的使用和配置
+
+### 1.Sitemesh 3 简介
+
+ Sitemesh 是一个网页布局和修饰的框架，基于 Servlet 中的 Filter。
+ 
+ 官网：http://wiki.sitemesh.org/wiki/display/sitemesh/Home 。
+ 
+ ![sitemesh3](http://wiki.sitemesh.org/wiki/download/attachments/589826/Figure%201%20with%20Mobile.png?version=9&modificationDate=1349312948377&api=v2 "Title")
+ 
+### 2.Sitemesh 3 下载
+ - Github: https://github.com/sitemesh/sitemesh3
+ - maven: 
+```xml
+<dependency>
+  <groupId>org.sitemesh</groupId>
+  <artifactId>sitemesh</artifactId>
+  <version>3.0.0</version>
+</dependency>
+```
+
+### 3.配置 Sitemesh 3 过滤器
+在 web.xml 中添加 Sitemesh Filter： 
+```xml
+<web-app>
+ ...
+  <filter>
+    <filter-name>sitemeshFilter</filter-name>
+    <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>sitemeshFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+	...
+</web-app>
+```
+
+### 4 . 准备两个页面：demo.html 和 decorator.html
+1.demo.html - “被装饰的页面”,实际要呈现的内容页。
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>内容页的标题</title>
+</head>
+<body>
+    内容页的body部分
+</body>
+</html>
+```
+2.decorator.html - “装饰页面”，所谓的“母版页”。
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <sitemesh:write property='title' /> </title>
+    <sitemesh:write property='head' />
+  </head>
+  <body>
+      <header>header</header>
+      <hr />
+      demo.html的title将被填充到这儿：
+      <sitemesh:write property='title' /><br />
+      demo.html的body将被填充到这儿：
+      <sitemesh:write property='body' />
+      <hr />
+      <footer>footer</footer>
+  </body>
+</html>
+```
+### 5 . 添加 /WEB-INF/sitemesh3.xml
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <!-- 指明满足“/*”的页面，将被“/WEB-INF/views/decorators/decorator.html”所装饰 -->
+    <mapping path="/*" decorator="/WEB-INF/views/decorators/decorator.html" />
+
+    <!-- 指明满足“/exclude.jsp*”的页面，将被排除，不被装饰 -->
+    <mapping path="/exclude.jsp*" exclue="true" />
+</sitemesh>
+```
+
+### 6. 运行效果
+
+### 7 . sitemesh3.xml 配置详解
+```xml
+<sitemesh>
+    <!--默认情况下，
+        sitemesh 只对 HTTP 响应头中 Content-Type 为 text/html 的类型进行拦截和装饰，
+        我们可以添加更多的 mime 类型-->
+  <mime-type>text/html</mime-type>
+  <mime-type>application/vnd.wap.xhtml+xml</mime-type>
+  <mime-type>application/xhtml+xml</mime-type>
+  ...
+  
+  <!-- 默认装饰器，当下面的路径都不匹配时，启用该装饰器进行装饰 -->
+  <mapping decorator="/default-decorator.html"/>
+  
+  <!-- 对不同的路径，启用不同的装饰器 -->
+  <mapping path="/admin/*" decorator="/another-decorator.html"/>
+  <mapping path="/*.special.jsp" decorator="/special-decorator.html"/>
+
+  <!-- 对同一路径，启用多个装饰器 -->
+  <mapping>
+    <path>/articles/*</path>
+    <decorator>/decorators/article.html</decorator>
+    <decorator>/decorators/two-page-layout.html</decorator>
+    <decorator>/decorators/common.html</decorator>
+  </mapping>
+
+  <!-- 排除，不进行装饰的路径 -->
+  <mapping path="/javadoc/*" exclue="true"/>
+  <mapping path="/brochures/*" exclue="true"/>
+  
+  <!-- 自定义 tag 规则 -->
+  <content-processor>
+    <tag-rule-bundle class="com.something.CssCompressingBundle" />
+    <tag-rule-bundle class="com.something.LinkRewritingBundle"/>
+  </content-processor>
+  ...
+
+</sitemesh>
+```
+
+### 8 . 自定义 tag 规则
+Sitemesh 3 默认只提供了 body，title，head 等 tag 类型，我们可以通过实现 TagRuleBundle 扩展自定义的 tag 规则：
+```java
+public class MyTagRuleBundle implements TagRuleBundle {
+  @Override
+  public void install(State defaultState, ContentProperty contentProperty,
+      SiteMeshContext siteMeshContext) {
+    defaultState.addRule("myHeader", new ExportTagToContentRule(contentProperty.getChild("myHeader"), false));
+      
+  }
+  
+  @Override
+  public void cleanUp(State defaultState, ContentProperty contentProperty,
+      SiteMeshContext siteMeshContext) {
+  }
+}
+```
+最后在 sitemesh3.xml 中配置即可：
+```xml
+<content-processor>
+  <tag-rule-bundle class="com.lt.common.ext.sitemesh3.MyTagRuleBundle" />
+</content-processor>
+```
+
+via:http://www.cnblogs.com/luotaoyeah/p/3776879.html
