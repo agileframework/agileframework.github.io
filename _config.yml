@@ -23,6 +23,7 @@ redcarpet:
      - strikethrough
      - autolink
      - tables
+     - highlight
      - prettify
     
 
