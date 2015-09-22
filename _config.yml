@@ -1,9 +1,9 @@
 #Dependencies
 markdown: kramdown
 highlighter: pygments
+permalink: /:title
 #permalink: /:categories/:title.html
 #permalink: pretty
-permalink: /:title
 
 #Server
 baseurl: /
