@@ -1,6 +1,5 @@
-
 # Handling Reading
-#safe: false
+safe: false
 encoding: UTF-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
