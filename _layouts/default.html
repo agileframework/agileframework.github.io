@@ -1,9 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="OpenSource Documents,framework">
+<meta name="author" content="oxidyc">
 
-
----
-layout: default
-title: 你好，世界
----
-<h2>{{ page.title }}</h2>
-<p>我的第一篇文章</p>
-<p>{{ page.date | date_to_string }}</p>
+<title>{{page.title}}</title>
+</head>
+<body>
+  <div class="container">
+    {{content}}
+</div>
+</body>
+</html>
