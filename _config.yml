@@ -5,7 +5,7 @@ encoding: UTF-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
-#markdown:     redcarpet
+markdown:     kramdown
 #highlighter:  rouge
 #lsi:          false
 
@@ -28,7 +28,16 @@ permalink:     /kb/:categories/:title
 #     - with_toc_data
 #     - highlight
 #     - no_intra_emphasis
-    
+
+kramdown:
+  input:  GFM
+ extensions:
+    - autolink
+    - footnotes
+    - smart
+    - fenced_code_blocks
+    - no_intra_emphasis
+ syntax_highlighter: rouge
     
 #extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]    
 #Dependencies
