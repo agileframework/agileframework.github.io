@@ -3,7 +3,8 @@ markdown: kramdown
 #highlighter: rouge
 
 #Permalinks
-permalink: none
+#permalink: none
+permalink: /:categories/:title.html
 
 #Server
 baseurl: /
