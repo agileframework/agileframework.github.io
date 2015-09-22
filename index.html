@@ -1,3 +1,23 @@
+---
+layout: default
+title: CMS
+---
+
+<h2>{{ page.title }}</h2>
+
+    　　<p>最新文章</p>
+
+    　　<ul>
+
+    　　　　{% for post in site.posts %}
+
+    　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+    　　　　{% endfor %}
+
+    　　</ul>
+
+<!--
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,7 +30,7 @@
     <!-- Latest compiled and minified CSS -->
     <!--
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    -->
+    --
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/flatly/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -57,20 +77,6 @@
       </ul>
     </div>
     <div>
-    　　<h2>{{ page.title }}</h2>
-
-    　　<p>最新文章</p>
-
-    　　<ul>
-
-    　　　　{% for post in site.posts %}
-
-    　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
-    　　　　{% endfor %}
-
-    　　</ul>
-
     </div>
     
     <footer>
@@ -90,15 +96,15 @@
               <a href="http://weibo.com/oxidyc" target="_blank"><i class="fa fa-fw fa-weibo fa-lg text-danger"></i></a>
               <!--
               <a href="#2260508919"><i class="fa fa-fw fa-qq fa-2x text-danger"></i></a>
-              -->
+              --
             </p>
           </div>
         </div>
       </div>
     </footer>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript --
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </body>
 </html>
-
+-->
