@@ -1,5 +1,6 @@
 ---
 layout: default
+category: technology
 title: 你好，世界
 ---
 
