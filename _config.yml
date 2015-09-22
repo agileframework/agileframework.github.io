@@ -1,33 +1,33 @@
 
 # Handling Reading
-safe: false
+#safe: false
 encoding: UTF-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
-markdown:     redcarpet
-highlighter:  rouge
-lsi:          false
+#markdown:     redcarpet
+#highlighter:  rouge
+#lsi:          false
 
 #Server
 baseurl: http://agileframework.org
 
 # Outputting
 permalink:     /kb/:categories/:title
-paginate_path: /page:num
-timezone:      null
+#paginate_path: /page:num
+#timezone:      null
 
-redcarpet:
-    extensions: 
-     - fenced_code_blocks
-     - hard_wrap
-     - autolink
-     - tables
-     - strikethrough
-     - superscript
-     - with_toc_data
-     - highlight
-     - no_intra_emphasis
+#redcarpet:
+#    extensions: 
+#     - fenced_code_blocks
+#     - hard_wrap
+#     - autolink
+#     - tables
+#     - strikethrough
+#     - superscript
+#     - with_toc_data
+#     - highlight
+#     - no_intra_emphasis
     
     
 #extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]    
