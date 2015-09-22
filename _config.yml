@@ -1,10 +1,10 @@
 #Dependencies
 markdown: kramdown
 highlighter: pygments
-permalink: /kb/:title
+permalink: /kb/:categories/:title
 #permalink: /:categories/:title.html
 #permalink: pretty
 
 #Server
-baseurl: /
+baseurl: http://agileframework.org/
 encoding: UTF-8
