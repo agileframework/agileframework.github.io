@@ -5,8 +5,8 @@ encoding: UTF-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
-#markdown:     redcarpet
-highlighter:  pygments
+markdown:     redcarpet
+highlighter:  rouge
 lsi:          false
 
 #Server
@@ -19,7 +19,6 @@ timezone:      null
 
 redcarpet:
     extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
-
 #Dependencies
 #markdown: redcarpet
 #highlighter: pygments
