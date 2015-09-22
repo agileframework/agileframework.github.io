@@ -1,11 +1,8 @@
 #Dependencies
-#markdown: kramdown
-#highlighter: rouge
-#markdown: redcarpet
+markdown: kramdown
+highlighter: pygments
 #permalink: /:categories/:title.html
 permalink: /:title.html
-pygments: true
-
 pygments: true
 
 #Server
