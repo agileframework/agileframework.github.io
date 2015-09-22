@@ -23,6 +23,7 @@ redcarpet:
 kramdown:
   input: GFM
   extensions:
+    - fenced_code_blocks
     - autolink
     - footnotes
     - smart
