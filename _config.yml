@@ -1,5 +1,5 @@
 #Dependencies
-markdown: kramdown
+markdown: redcarpt
 highlighter: pygments
 permalink: /kb/:categories/:title
 #permalink: /:categories/:title.html
