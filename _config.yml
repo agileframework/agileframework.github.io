@@ -5,8 +5,8 @@ encoding: UTF-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
-markdown:     redcarpet
-highlighter:  pygments
+markdown:     kramdown
+#highlighter:  pygments
 lsi:          false
 
 #Server
@@ -28,7 +28,7 @@ kramdown:
     - footnotes
     - smart
   use_coderay: true
-  syntax_highlighter: rouge
+  syntax_highlighter: pygments
   coderay:
     coderay_line_numbers:  nil
     
