@@ -1,6 +1,5 @@
 ---
 layout: default
-categories: teach
 title: 你好，世界
 ---
 
