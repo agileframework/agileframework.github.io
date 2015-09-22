@@ -17,17 +17,7 @@ permalink:     /kb/:categories/:title
 #timezone:      null
 
 redcarpet:
-    extensions: 
-     - fenced_code_blocks
-     - no_intra_emphasis
-     - strikethrough
-     - autolink
-     - tables
-     - highlight
-     - prettify
-    
-
-#extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]    
+    extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]    
 #Dependencies
 #markdown: redcarpet
 #highlighter: pygments
