@@ -1,14 +1,10 @@
 #Dependencies
 #markdown: kramdown
 #highlighter: rouge
-markdown: redcarpet
+#markdown: redcarpet
 #permalink: /:categories/:title.html
 permalink: /:title.html
-url: 
-lsi: false
 pygments: true
-safe: true
-auto: false
 
 pygments: true
 
