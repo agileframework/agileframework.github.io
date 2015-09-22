@@ -4,8 +4,7 @@ highlighter: pygments
 permalink: /kb/:categories/:title
 #permalink: /:categories/:title.html
 #permalink: pretty
-redcarpet:
-extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
+safe: false
 #Server
 baseurl: http://agileframework.org
 encoding: UTF-8
