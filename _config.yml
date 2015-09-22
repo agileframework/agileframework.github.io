@@ -6,5 +6,5 @@ permalink: /kb/:categories/:title
 #permalink: pretty
 
 #Server
-baseurl: http://agileframework.org/
+baseurl: http://agileframework.org
 encoding: UTF-8
