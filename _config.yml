@@ -1,7 +1,7 @@
 #Dependencies
 markdown: kramdown
 highlighter: pygments
-permalink: /:title
+permalink: /kb/:title
 #permalink: /:categories/:title.html
 #permalink: pretty
 
