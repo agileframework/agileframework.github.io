@@ -4,9 +4,9 @@ encoding: UTF-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
-markdown:     kramdown
+markdown:     redcarpet
 highlighter:  pygments
-#lsi:          false
+lsi:          false
 
 #Server
 baseurl: http://agileframework.org
@@ -16,21 +16,18 @@ permalink:     /kb/:categories/:title
 #paginate_path: /page:num
 #timezone:      null
 
-#redcarpet:
-#    extensions: 
-#     - fenced_code_blocks
-#     - hard_wrap
-#     - autolink
-#     - tables
-#     - strikethrough
-#     - superscript
-#     - with_toc_data
-#     - highlight
-#     - no_intra_emphasis
+redcarpet:
+    extensions: 
+     - fenced_code_blocks
+     - hard_wrap
+     - autolink
+     - tables
+     - strikethrough
+     - superscript
+     - with_toc_data
+     - highlight
+     - no_intra_emphasis
 
-kramdown:
-  input:  GFM
-    
 #extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]    
 #Dependencies
 #markdown: redcarpet
