@@ -5,8 +5,8 @@ encoding: UTF-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
-markdown:     kramdown
-#highlighter:  pygments
+#markdown:     redcarpet
+highlighter:  pygments
 lsi:          false
 
 #Server
@@ -19,19 +19,7 @@ timezone:      null
 
 redcarpet:
     extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
-    
-kramdown:
-  input: GFM
-  extensions:
-    - fenced_code_blocks
-    - autolink
-    - footnotes
-    - smart
-  use_coderay: true
-  syntax_highlighter: pygments
-  coderay:
-    coderay_line_numbers:  nil
-    
+
 #Dependencies
 #markdown: redcarpet
 #highlighter: pygments
