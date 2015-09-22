@@ -2,7 +2,8 @@
 markdown: kramdown
 highlighter: pygments
 #permalink: /:categories/:title.html
-permalink: pretty
+#permalink: pretty
+permalink: /:title
 
 #Server
 baseurl: /
