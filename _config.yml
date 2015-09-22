@@ -1,10 +1,26 @@
-#Dependencies
-markdown: redcarpet
-highlighter: pygments
-permalink: /kb/:categories/:title
-#permalink: /:categories/:title.html
-#permalink: pretty
+
+# Handling Reading
 safe: false
+encoding: UTF-8
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown:     kramdown
+highlighter:  pygments
+lsi:          false
+
 #Server
 baseurl: http://agileframework.org
-encoding: UTF-8
+
+# Outputting
+permalink:     /kb/:categories/:title
+paginate_path: /page:num
+timezone:      null
+
+
+#Dependencies
+#markdown: redcarpet
+#highlighter: pygments
+#permalink: /kb/:categories/:title
+#permalink: /:categories/:title.html
+#permalink: pretty
